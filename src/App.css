@@ -1,0 +1,257 @@
+.app {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 140px;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.logo {
+  width: 120px;
+  margin: 10px auto;
+  display: block;
+  filter: drop-shadow(0 0 6px rgba(255, 140, 0, 0.6));
+}
+
+/* NAV */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+nav button {
+  width: 120px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #ff6600;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 15px;
+}
+
+nav button:hover,
+nav button.active {
+  background-color: #ff9800;
+}
+
+/* LISTA PRODUTOS */
+.container {
+  width: 100%;
+  padding: 0 12px;
+}
+
+.lista-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  justify-items: center;
+  width: 100%;
+}
+
+/* CARD */
+.produto {
+  background-color: #1a1a1a;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: 0.2s ease;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+}
+
+.produto img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-bottom: 2px solid orange;
+}
+
+.produto h3 {
+  color: #fff;
+  font-size: 1rem;
+  margin: 8px 0 4px 0;
+}
+
+.produto p {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.produto button {
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-weight: bold;
+  margin: 8px 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.produto button:hover {
+  background-color: #ff9800;
+}
+
+/* CARRINHO */
+.carrinho {
+  background-color: #1b1b1b;
+  color: #fff;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px 15px 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.carrinho-item {
+  display: flex;
+  align-items: center;
+  background-color: #222;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+}
+
+.carrinho-item img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 12px;
+  border: 2px solid orange;
+}
+
+.carrinho-info {
+  text-align: left;
+  flex: 1;
+}
+
+.carrinho-info h4 {
+  font-size: 0.95rem;
+}
+
+.carrinho-total {
+  color: #ff9900;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+/* BOTÃO CARRINHO FIXO */
+.btn-carrinho {
+  position: fixed;
+  bottom: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #22c55e;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+  z-index: 50;
+}
+
+/* LOGIN MODAL */
+.modal-fundo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-login {
+  background-color: #1b1b1b;
+  padding: 20px 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(255, 140, 0, 0.4);
+}
+
+.modal-login input {
+  width: 90%;
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 8px;
+  border: none;
+}
+
+.modal-login button {
+  background-color: orange;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  color: #999;
+  font-size: 0.85rem;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* RESPONSIVO */
+@media (max-width: 480px) {
+  .lista-produtos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .produto {
+    max-width: 160px;
+  }
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: white;
+}
+
+.info-contato {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.login-text {
+  cursor: pointer;
+  color: orange;
+  font-weight: bold;
+}
